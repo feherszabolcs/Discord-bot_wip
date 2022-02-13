@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = process.env.PREFIX;
+const prefix = '-';
 require('dotenv').config();
 const client = new Discord.Client();
 
