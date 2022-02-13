@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const prefix = '-';
+const prefix = process.env.PREFIX;
+require('dotenv').config();
 const client = new Discord.Client();
 
 const fs = require('fs');
@@ -23,6 +24,10 @@ client.on('message', message=>{
 
     if(command === 'author'){
        client.commands.get('author').execute(message,args);
+    }else if(command === 'play'){
+        client.commands.get('play').execute(message,args);
+    }else if(command === 'leave'){
+        client.commands.get('leave').execute(message,args);
     }
 });
 
@@ -31,12 +36,6 @@ client.on('message', message=>{
 
 
 
-
-
-
-
-
-
-client.login('OTM5MjMyNDQxMDc0MzMxNjg5.Yf12YA.YaSKzSGkRR-JQefhbxCmhpaPDKY');
+client.login(process.env.BOT_TOKEN);
 
 
